@@ -1,0 +1,1 @@
+Pasta com códigos escritos durante o aprendizado de linguagens e suas ferramentas.
