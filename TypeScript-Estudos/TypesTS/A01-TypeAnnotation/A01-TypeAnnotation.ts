@@ -23,4 +23,4 @@ function soma(x:number, y:number): number{
   return x + y;
 }
 //           vvvvvvvvvvvv-TYPE-vvvvvvvvvvvv
-const soma2: (x:number, y:number) => number = (x, y) => x + y;
+export const soma2: (x:number, y:number) => number = (x, y) => x + y;
