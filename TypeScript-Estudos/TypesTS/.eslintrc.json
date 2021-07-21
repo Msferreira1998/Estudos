@@ -18,6 +18,7 @@
     ],
     "rules": {
       "prettier/prettier": "error",
-      "eslintno-unused-vars": false
+      "no-unused-vars": 0,
+      "no-shadow": 0
     }
 }
