@@ -20,6 +20,9 @@
       "prettier/prettier": "error",
       "no-unused-vars": 0,
       "no-shadow": 0,
-      "no-console": 0
+      "no-console": 0,
+      "no-restricted-syntax": 0,
+      "guard-for-in": 0,
+      "prefer-const": "off"
     }
 }
