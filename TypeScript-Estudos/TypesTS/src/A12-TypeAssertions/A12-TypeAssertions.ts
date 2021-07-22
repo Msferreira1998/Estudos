@@ -19,3 +19,5 @@ const body3 = document.querySelector('body') as unknown as number;
 // Non-null assertion (!)
 const body4 = document.querySelector('body')!;
 body4.style.backgroundColor = 'red';
+
+export default 1;
