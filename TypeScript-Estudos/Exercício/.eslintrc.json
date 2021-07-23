@@ -17,6 +17,13 @@
         "prettier"
     ],
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": "error",
+      "import/no-unresolved": 0,
+      "import/extensions": 0,
+      "no-use-before-define":"off",
+      "no-unused-vars":"off",
+      "no-shadow":"off",
+      "no-restricted-syntax":"off",
+      "guard-for-in":"off"
     }
 }
