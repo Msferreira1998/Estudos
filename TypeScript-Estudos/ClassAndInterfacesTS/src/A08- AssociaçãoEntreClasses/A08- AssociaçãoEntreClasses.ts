@@ -46,3 +46,4 @@ const caneta = new Caneta('bic');
 const maquinaEscrever = new MaquinaEscrever('Thompson');
 
 escritor.ferramenta = caneta;
+escritor.write();
