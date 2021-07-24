@@ -1,4 +1,4 @@
-class Escritor {
+export class Escritor {
   private _ferramenta: Ferramenta | null = null;
 
   constructor(private _name: string) {}
