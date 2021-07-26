@@ -24,6 +24,7 @@
       "no-unused-vars":"off",
       "no-underscore-dangle":"off",
       "no-useless-return":"off",
-      "no-restricted-syntax":"off"
+      "no-restricted-syntax":"off",
+      "no-console":"off"
     }
 }
