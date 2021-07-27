@@ -1,0 +1,37 @@
+{
+  "name": "Decorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:frontend": "webpack -w",
+    "build:backend": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/lodash": "^4.14.157",
+    "@types/node": "^14.0.23",
+    "@types/validator": "^13.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.4",
+    "@typescript-eslint/parser": "^4.28.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.2",
+    "ts-loader": "^8.0.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "validator": "^13.1.1"
+  }
+}
