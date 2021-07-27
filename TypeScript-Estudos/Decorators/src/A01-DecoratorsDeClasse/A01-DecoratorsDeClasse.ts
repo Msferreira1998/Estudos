@@ -22,3 +22,5 @@ function decorator<T extends new (...args: any[]) => any>(target: T) {
 
 const animal = new Animal('Matheus', 'roxo');
 console.log(animal);
+
+export default 1;
