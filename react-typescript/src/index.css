@@ -1,7 +1,74 @@
+:root {
+  --cor-um: #41e1ba;
+  --cor-dois: #ef5d50;
+}
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
   font-family: sans-serif;
+}
+
+body {
+  background-color: var(--cor-um);
+  transition: background-color 300ms ease-in-out;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.working {
+  background-color: var(--cor-dois);
+}
+
+.hidden {
+  display: none;
+}
+
+.pomodoro {
+  background-color: #fff;
+  margin: 50px 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pomodoro h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.pomodoro .timer {
+  font-size: 6rem;
+  text-align: center;
+}
+
+.pomodoro .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.working .pomodoro button {
+  background-color: var(--cor-dois);
+}
+
+.pomodoro button {
+  background-color: var(--cor-um);
+  border: none;
+  cursor: pointer;
+  padding: 10px 25px;
+  color: #000;
+  transition: background-color 300ms ease-in-out;
+  margin: 20px auto;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.pomodoro .details {
+  margin: 20px 0;
 }
