@@ -16,16 +16,31 @@ export function PomodoroTimer(props: Props): JSX.Element {
   const [mainTime, setMainTime] = useState(props.pomodoroTime);
   const [timeCouting, setTimeCouting] = useState(false);
   const [working, setWoking] = useState(false);
+  const [resting, setResting] = useState(false);
 
   function configureWork() {
     setTimeCouting(true);
     setWoking(true);
+    setResting(false);
+    setMainTime(props.pomodoroTime);
+  }
+  function configureRest(long: boolean) {
+    setTimeCouting(true);
+    setWoking(false);
+    setResting(true);
+
+    if (long) {
+      setMainTime(props.longRestTime);
+    } else {
+      setMainTime(props.shortRestTime);
+    }
   }
 
   useEffect(() => {
     if (working) {
       document.body.classList.add('working');
-    } else {
+    }
+    if (resting) {
       document.body.classList.remove('working');
     }
   }, [working]);
@@ -42,24 +57,22 @@ export function PomodoroTimer(props: Props): JSX.Element {
       <Timer mainTime={mainTime} />
       <div className="controls">
         <Button
-          text="Work"
+          text={mainTime !== props.pomodoroTime ? 'Restart' : 'Work'}
           onClick={() => {
             configureWork();
           }}
         />
         <Button
-          text={timeCouting ? 'Pause' : 'Play'}
+          text="Rest"
           onClick={() => {
-            setTimeCouting(!timeCouting);
-            setWoking(!working);
+            configureRest(false);
           }}
         />
         <Button
-          text="Restart"
+          className={!working && !resting ? 'hidden' : ''}
+          text={timeCouting ? 'Pause' : 'Play'}
           onClick={() => {
-            setTimeCouting(false);
-            setWoking(false);
-            setMainTime(props.pomodoroTime);
+            setTimeCouting(!timeCouting);
           }}
         />
       </div>
