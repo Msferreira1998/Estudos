@@ -8,8 +8,8 @@ const Map = dynamic(() => import('components/Map'), { ssr: false });
 export default function Home() {
   return (
     <React.Fragment>
-      <LinkWrapper href="/about">
-        <InfoOutline size={32} aria-label="about" />
+      <LinkWrapper href="/About">
+        <InfoOutline size={32} aria-label="About" />
       </LinkWrapper>
 
       <Map />
