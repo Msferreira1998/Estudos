@@ -33,7 +33,7 @@ export default function Map({ places }: MapProps) {
             position={[latitude, longitude]}
             title={name}
           >
-            <Popup>{slug}</Popup>
+            <Popup>{name}</Popup>
           </Marker>
         );
       })}
