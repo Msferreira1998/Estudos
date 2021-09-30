@@ -1,6 +1,13 @@
 import { useRouter } from 'next/dist/client/router';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import * as S from './styles'
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  MapConsumer,
+} from 'react-leaflet';
+
+import * as S from './styles';
 
 type Place = {
   id: string;
@@ -38,32 +45,49 @@ export default function Map({ places }: MapProps) {
   const router = useRouter();
   return (
     <S.MapWrapper>
-    <MapContainer
-      center={[0, 0]}
-      zoom={3}
-      style={{ height: '100%', width: '100%' }}
-      minZoom={3}
-      maxBounds={[[180, -180], [-180, 180]]}
-    >
-      <CustomTileLayer />
-      {places?.map(({ id, name, slug, location }) => {
-        const { latitude, longitude } = location;
-        return (
-          <Marker
-            key={`place-${id}`}
-            position={[latitude, longitude]}
-            title={name}
-            eventHandlers={{
-              click: () => {
-                router.push(`/place/${slug}`);
-              },
-            }}
-          >
-            <Popup>{name}</Popup>
-          </Marker>
-        );
-      })}
-    </MapContainer>
+      <MapContainer
+        center={[0, 0]}
+        zoom={3}
+        style={{ height: '100%', width: '100%' }}
+        minZoom={3}
+        maxBounds={[
+          [180, -180],
+          [-180, 180],
+        ]}
+      >
+        <MapConsumer>
+          {(map) => {
+            const width =
+              window.innerWidth ||
+              document.documentElement.clientWidth ||
+              document.body.clientWidth;
+
+            if (width < 768) {
+              map.setMinZoom(2);
+            }
+
+            return null;
+          }}
+        </MapConsumer>
+        <CustomTileLayer />
+        {places?.map(({ id, name, slug, location }) => {
+          const { latitude, longitude } = location;
+          return (
+            <Marker
+              key={`place-${id}`}
+              position={[latitude, longitude]}
+              title={name}
+              eventHandlers={{
+                click: () => {
+                  router.push(`/place/${slug}`);
+                },
+              }}
+            >
+              <Popup>{name}</Popup>
+            </Marker>
+          );
+        })}
+      </MapContainer>
     </S.MapWrapper>
   );
 }
