@@ -1,5 +1,6 @@
 import { useRouter } from 'next/dist/client/router';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import * as S from './styles'
 
 type Place = {
   id: string;
@@ -36,6 +37,7 @@ const CustomTileLayer = () => {
 export default function Map({ places }: MapProps) {
   const router = useRouter();
   return (
+    <S.MapWrapper>
     <MapContainer
       center={[0, 0]}
       zoom={3}
@@ -60,5 +62,6 @@ export default function Map({ places }: MapProps) {
         );
       })}
     </MapContainer>
+    </S.MapWrapper>
   );
 }
