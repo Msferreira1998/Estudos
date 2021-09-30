@@ -1,0 +1,13 @@
+*{
+    font-family: 'Work Sans', sans-serif;
+}
+
+.background{
+    background-image: url(../images/mural.jpg);
+    background-size:cover;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-attachment:fixed;
+    width: 100vw;
+    height: 100vh;
+}

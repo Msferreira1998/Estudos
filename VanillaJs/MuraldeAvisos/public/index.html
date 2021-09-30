@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--SEO-->
+    <meta name="description" content="Mural de Avisos" />
+
+    <!--SMO-->
+    <meta property="og:title" content="Mural de Avisos">
+    <meta property="og:site_name" content="Mural de Avisos">
+    <meta property="og:description" content="Mural de Avisos">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="#">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <title>Mural de Avisos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;700&family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body>
+    <div class="background p-2">
+
+        <div class="container">
+            <div class="novoPost p-4 mb-2 bg-light">
+                <h3 class="row justify-content-center mb-4">Crie um novo aviso</h3>
+                <div class="mb-2 row">
+                    <input id="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Título">
+                  </div>
+                  <div class="mb-2 row">
+                    <textarea id="description" class="form-control" id="exampleFormControlTextarea1" placeholder="Descrição" rows="3"></textarea>
+                  </div>
+                <div class="d-grid gap-2">
+                    <button onclick="newPosts()" type="button" class="row btn btn-primary btn-lg">Postar</button>
+                </div>
+            </div><!--novoPost-->
+            <div id="posts" class="avisos p-4 mb-2 bg-light">
+                <h1 class="row justify-content-center mb-3">Avisos</h1>
+
+                <!-- <div class="card mb-2">
+                    <h3 class="card-header">Title</h3>
+                    <p class="card-body card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In finibus libero ante, ut viverra nisl pellentesque sit amet. Suspendisse at pretium odio, semper hendrerit dolor. Suspendisse dui purus, sollicitudin a metus a, imperdiet porttitor justo. Pellentesque sodales tortor a nisl accumsan accumsan. Quisque mattis, eros venenatis maximus vehicula, tellus leo scelerisque odio, vel mollis mauris eros nec tellus. Nullam at ullamcorper augue. Donec velit elit, lobortis nec erat eu, bibendum sodales tortor. Nam non velit ut dui cursus tincidunt.</p>
+                </div> -->
+                
+            </div><!--avisos-->
+        </div><!--container-->
+
+    </div><!--background-->
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+</body>
+</html>

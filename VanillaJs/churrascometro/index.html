@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!--SEO-->
+    <meta name="description" content="Churrascômetro" />
+
+    <!--SMO-->
+    <meta property="og:title" content="Churrascômetro">
+    <meta property="og:site_name" content="Churrascômetro">
+    <meta property="og:description" content="Calcule a quantidade de carne para seu churrasco">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="images/churrasco.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <title>Churrascometro</title>
+</head>
+<body>
+    
+    <section class="main">
+        <div class="center">
+            <div class="inputs">
+                <h1>Churrascômetro</h1>
+                <input type="number" nome="adultos" placeholder="Adultos">
+                <input type="number" nome="crianças" placeholder="Crianças">
+                <input type="number" nome="duração" placeholder="Duração(h)">
+                <div id="resultado" class="resultado"> 
+                    <p id="carne"></p>
+                    <p id="cerveja"></p>
+                    <p id="bebidas"></p>
+                </div><!--resultado-->
+                <input onclick="calcular()" type ="submit" value="Calcular">
+            </div><!--inputs-->
+        </div><!--center-->
+    </section><!--main-->
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
