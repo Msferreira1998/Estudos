@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <div id="app">
+        <p v-once>{{ title }}</p>
+        <p>{{ saudacao() }}</p>
+        <a v-bind:href="link">Google</a>
+        <hr>
+        <p v-html="linkHtml"></p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'Aprendendo VueJs 2',
+                link: 'http://google.com.br',
+                linkHtml: '<a href="http://www.google.com.br">Google</a>'
+            },
+            methods: {
+                saudacao: () => {
+                    this.title = 'Bom dia!!!'
+                    return this.title
+                }
+            }
+        })
+    </script>
+</body>
+</html>
