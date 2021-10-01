@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <style>
+
+        #app{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        .c1{
+            background-color: red;
+        }
+
+        .c2{
+            background-color: blue;
+        }
+
+        .c3{
+            background-color: green;
+        }
+    </style>
+
+    <div id="app">
+        <div class="demo" 
+            :class="estilo1" 
+            @click="aplicarc1 = !aplicarc1"></div>
+        <div class="demo" 
+            :class="{'c2': aplicarc2}" 
+            @click="aplicarc2 = !aplicarc2"></div>
+        <div class="demo" 
+            :class="{'c3': aplicarc3}" 
+            @click="aplicarc3 = !aplicarc3"></div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarc1: false,
+                aplicarc2: false,
+                aplicarc3: false,                
+            },
+            computed: {
+                estilo1(){
+                    return {
+                        'c1': this.aplicarc1,
+                        'c2': !this.aplicarc1
+                    }
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

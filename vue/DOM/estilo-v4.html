@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <style>
+
+        .boxes{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .demo {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+        
+
+        .c1{
+            background-color: red;
+        }
+
+        .c2{
+            background-color: blue;
+        }
+
+        .c3{
+            background-color: green;
+        }
+
+        .girar{
+
+            transform: rotate(50deg);
+        }
+    </style>
+
+    <div id="app">
+        <div class="boxes">
+            <div class="demo" :style="{backgroundColor: cor}"></div>
+            <div class="demo" :style="[meuEstilo,  {height: altura} ]"></div>
+            <div class="demo"></div>
+        </div>
+        <hr>
+        <input type="text" v-model="cor">
+        <input type="text" v-model="largura">
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                cor: 'red',
+                largura: 150,
+                altura: `${20}px`
+            },
+            computed: {
+                meuEstilo(){
+                    return{
+                        backgroundColor: this.cor,
+                        width: `${this.largura}px`
+                    }
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
