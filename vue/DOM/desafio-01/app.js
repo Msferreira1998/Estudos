@@ -10,6 +10,6 @@ new Vue({
             return (this.IDADE * 3)
         },
 
-        RandomNum: () => Math.random()
+        RandomNum: () => Math.random().toFixed(2)
     }
 })
