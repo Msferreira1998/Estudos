@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <div id="app">
+       
+        <p>
+            {{ contador }}
+        </p>
+        <button v-on:click="somar" >Somar 1</button>
+
+        <p v-on:mouseMove="attXY">Mouse: {{x}} e {{y}}</p>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods:{
+                somar(){
+                    this.contador++
+                },
+                attXY(e){
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

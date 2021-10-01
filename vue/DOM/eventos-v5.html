@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <div id="app">
+       
+        <p>{{ contador }}</p>
+        <button v-on:click="somar(2, $event)" >Somar</button>
+
+        <p v-on:mouseMove="attXY">Mouse: {{x}} e {{y}} <span v-on:mouseMove.stop>PARAR AQUI!!!!</span></p>
+
+        <a v-on:click.prevent="naoNavegar" href="http://google.com">Google</a>
+        <hr>
+        <input type="text" v-on:keyup.enter.alt="exibirAlerta" />
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods:{
+                somar(num, e){
+                    this.contador += num;
+
+                },
+                attXY(e){
+                    this.x = e.clientX;
+                    this.y = e.clientY;
+                },
+                naoNavegar(e){
+                    console.log('Não navegar')
+                    // e.preventDefault();
+                },
+                // stopAttXY(e){
+                //     e.stopPropagation()
+                // },
+                exibirAlerta(e){
+                    alert(e.target.value)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
