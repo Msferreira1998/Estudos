@@ -1,5 +1,5 @@
 // 1 - arrays
-let nums: number[] = [1, 2, 3]
+let nums: number[] = [1, 2, 3, 4]
 
 nums.push(5)
 
